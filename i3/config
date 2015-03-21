@@ -157,3 +157,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bar {
         status_command i3status
 }
+
+bindsym Control+mod1+l exec i3lock -ti /home/ionization/Pictures/abs-circle.png 
+exec feh --bg-fill /home/ionization/Pictures/SupermanPrime.jpg
+
