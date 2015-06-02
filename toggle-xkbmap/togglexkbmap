@@ -4,7 +4,9 @@
 OTHER_LAYOUT="th"
 CURRENT=`setxkbmap -query | grep layout | perl -pe 's/^layout: +([^ ]+)$/$1/'`
 if [ "$CURRENT" = "us" ] ; then
+  echo "THIS IS US"
 	setxkbmap -layout $OTHER_LAYOUT -option ctrl:nocaps
 else
+  echo "THIS IS TH"
 	setxkbmap -layout us -option ctrl:nocaps
 fi

@@ -84,7 +84,7 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 # Ziko use for keyboard layout change
 #bindsym $mod+space focus mode_toggle
-bindsym $mod+space exec "/opt/togglexkbmap"
+bindsym $mod+space exec "/opt/togglexkbmap && killall -SIGUSR1 i3status"
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -155,10 +155,11 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command /opt/I3status
+        #status_command i3status
 }
 bindsym --release button2 kill
-bindsym Control+mod1+l exec i3lock -ti /home/ionization/Pictures/spacego.png
+bindsym Control+mod1+l exec i3lock -ti /home/ionization/Pictures/goraster.png
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
@@ -174,5 +175,5 @@ mode "$mode_system" {
 }
 bindsym $mod+Pause mode "$mode_system"
 
-exec feh --bg-fill /home/ionization/Pictures/goraster.png
+exec feh --bg-fill /home/ionization/Pictures/doctor.jpg
 
