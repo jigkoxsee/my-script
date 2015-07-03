@@ -28,7 +28,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+#bindsym $mod+Return exec terminator
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,9 +150,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec amixer -q set Master toggle
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute && killall -SIGUSR1 i3status
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- && killall -SIGUSR1 i3status
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym XF86AudioRaiseVolume exec ponymix increase 2  && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec ponymix decrease 2 && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec ponymix toggle && killall -SIGUSR1 i3status
+
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
