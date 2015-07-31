@@ -84,7 +84,7 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 # Ziko use for keyboard layout change
 #bindsym $mod+space focus mode_toggle
-bindsym $mod+space exec "/opt/togglexkbmap"
+bindsym $mod+space exec "/home/ionization/.i3/togglexkbmap"
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -158,6 +158,6 @@ bar {
         status_command i3status
 }
 
-bindsym Control+mod1+l exec i3lock -ti /home/ionization/Pictures/abs-circle.png 
+bindsym Control+mod1+l exec cd /home/ionization/.i3/ && ./lock 
 exec feh --bg-fill /home/ionization/Pictures/SupermanPrime.jpg
 
